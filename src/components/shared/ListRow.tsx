@@ -2,6 +2,8 @@ import React from 'react'
 import Flex from './Flex'
 import Text from './Text'
 import { css } from '@emotion/react'
+import Skeleton from './Skeleton'
+import Spacing from './Spacing'
 
 interface ListRowProps {
   left?: React.ReactNode
@@ -46,13 +48,34 @@ const ListRowTexts = ({
   title,
   subTitle,
 }: {
-  title: string
-  subTitle: string
+  title: React.ReactNode
+  subTitle: React.ReactNode
 }) => {
   return (
     <Flex direction="column">
       <Text bold={true}>{title}</Text>
       <Text typography="t7">{subTitle}</Text>
+    </Flex>
+  )
+}
+
+//리스트 스켈레톤 UI
+const ListRowSkeleton = () => {
+  return (
+    <Flex as="li" css={listRowContainerStyles} align="center">
+      <Flex css={listLeftStyles}></Flex>
+      <Flex css={listRowContentStyles}>
+        <ListRow.Texts
+          title={
+            <>
+              <Skeleton width={67} height={23} />
+              <Spacing size={2} />
+            </>
+          }
+          subTitle={<Skeleton width={85} height={20} />}
+        />
+      </Flex>
+      <IconArrowRight />
     </Flex>
   )
 }
@@ -73,5 +96,5 @@ const IconArrowRight = () => {
 }
 
 ListRow.Texts = ListRowTexts //ListRow에 ListRowTexts 컴포넌트를 사용 (컴포넌트 합성)
-
+ListRow.Skeleton = ListRowSkeleton
 export default ListRow

@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuery } from 'react-query'
 import { getAdBanners } from '@remote/adBanner'
 import Flex from '@shared/Flex'
@@ -11,9 +10,18 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 const AdBanner = () => {
-  const { data } = useQuery(['adBanner'], () => getAdBanners())
+  const { data, isLoading } = useQuery(['adBanner'], () => getAdBanners())
 
-  console.log(data)
+  if (data == null || isLoading) {
+    return (
+      <Container>
+        <Flex direction="column" css={bannerContainerStyles}>
+          <Text bold={true}>&nbsp;</Text>
+          <Text typography="t7">&nbsp;</Text>
+        </Flex>
+      </Container>
+    )
+  }
 
   return (
     <Container>

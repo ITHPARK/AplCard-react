@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react'
+import React, { Suspense, useCallback } from 'react'
 import ListRow from '@shared/ListRow'
 import { useInfiniteQuery } from 'react-query'
 import { getCards } from '@/remote/cards'
-import { flatten } from 'lodash'
+import flatten from 'lodash.flatten'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import Badge from '@shared/Badge'
 import { useNavigate } from 'react-router-dom'
@@ -22,13 +22,18 @@ const CardList = () => {
       getNextPageParam: (snapshot) => {
         return snapshot.lastVisible //맨 마지막 요소 리턴. 이는 pageParam으로 들어간다.
       },
+      suspense: true,
     },
   )
 
   const navigate = useNavigate()
 
+  console.log(data)
+
   //page안에 배열 데이터만 가지고 오기
   const cards = flatten(data?.pages.map(({ items }) => items))
+
+  console.log(cards)
 
   const loadMore = useCallback(() => {
     if (hasNextPage === false || isFetching) {
@@ -48,7 +53,7 @@ const CardList = () => {
       <InfiniteScroll
         dataLength={cards.length}
         hasMore={hasNextPage}
-        loader={<></>}
+        loader={<ListRow.Skeleton />}
         next={loadMore}
         scrollThreshold="100px"
       >
@@ -56,7 +61,7 @@ const CardList = () => {
           {cards?.map((card, index) => {
             return (
               <ListRow
-                left={<div>left</div>}
+                // left={<div>left</div>}
                 contents={
                   <ListRow.Texts
                     title={`${index + 1}위`}

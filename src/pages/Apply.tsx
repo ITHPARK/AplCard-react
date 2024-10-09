@@ -7,9 +7,16 @@ import useUser from '@hooks/auth/useUser'
 import { useAlertContext } from '@/context/AlertContext'
 import { updateApplyCard } from '@remote/apply'
 import { useParams } from 'react-router-dom'
-import { APPLY_STATUS, ApplyValues } from '@/models/apply'
+import { APPLY_STATUS } from '@/models/apply'
 import { useNavigate } from 'react-router-dom'
 import FullPageLoader from '@shared/FullPageLoader'
+
+//카드신청 진행 메세지
+const STAUTS_MESSAGE = {
+  [APPLY_STATUS.READY]: '카드 심사를 준비하고 있습니다.',
+  [APPLY_STATUS.PROGRESS]: '카드를 심사중입니다. 잠시만 기다려주세요.',
+  [APPLY_STATUS.COMPLETE]: '카드 신청이 완료되었습니다.',
+}
 
 const ApplyPage = () => {
   const [readyToPoll, setReadyToPoll] = useState(false)
@@ -93,7 +100,7 @@ const ApplyPage = () => {
   }
 
   if (readyToPoll || isApplying) {
-    return <FullPageLoader message="카드를 신청중입니다." />
+    return <FullPageLoader message={STAUTS_MESSAGE[status ?? 'READY']} />
   }
 
   return <Apply onSubmit={mutate}></Apply>
