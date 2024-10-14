@@ -8,10 +8,11 @@ import { collection, doc, updateDoc } from 'firebase/firestore'
 import { COLLECTIONS } from '@/constants'
 import { userAtom } from '@atoms/user'
 import { useSetRecoilState } from 'recoil'
+import { auth } from '@remote/firebase'
 
 //'default'는 클릭했을 때 마이페이지로 이동하는 것  'upload' 프로필 사진 업데이트
 const MyImage = ({
-  size = 32,
+  size = 40,
   mode = 'default',
 }: {
   size?: number
@@ -33,7 +34,7 @@ const MyImage = ({
 
     const fileName = files[0].name
 
-    //저장할 폴더 위치
+    //저장할 폴더 경로명
     const storageRef = ref(storage, `user/${user.uid}/${fileName}`)
 
     //firebase storage에 파일을 업로드
@@ -58,6 +59,8 @@ const MyImage = ({
       photoURL: downloadUrl,
     })
   }
+
+  console.log(user)
 
   return (
     <Container>

@@ -30,7 +30,6 @@ const SignupPage = () => {
     //유저정보를 저장하는데 doc함수에서  id를 직접 지정해서 넣어주고  setDoc로 db에 추가
     await setDoc(doc(collection(store, COLLECTIONS.USER), user.uid), newUser)
 
-    //로그인 처리
     navigate('/')
   }
 

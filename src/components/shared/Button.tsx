@@ -79,7 +79,7 @@ const buttonGroupStyles = css`
   }
 `
 const Button = BaseButton as typeof BaseButton & {
-  //Button은 BaseButton 타입 기반
+  //BaseButton을 Button이라는 이름으로 다시 선언, 원래 BaseButton 타입을 그대로 유지
   Group: typeof ButtonGroup //Button과 Button.Group을 하나의 컴포넌트처럼 사용하기 위해서 설정
 }
 

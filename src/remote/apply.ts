@@ -21,7 +21,7 @@ export const updateApplyCard = async ({
 }: {
   cardId: string
   userId: string
-  applyValues: Partial<ApplyValues> // Partial = ApplyValues 일부만 업데이트 가능하게 설정
+  applyValues: Partial<ApplyValues> // Partial = ApplyValues 일부만 업데이트 가능하게 설정 신청 정보의 일부만 업데이트할 수 있다.
 }) => {
   const snapshot = await getDocs(
     query(

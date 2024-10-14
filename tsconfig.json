@@ -1,5 +1,5 @@
 {
-  "extends" : "./tsconfig.paths.json",
+  "extends": "./tsconfig.paths.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -17,7 +17,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["jest", "@testing-library/jest-dom", "node"],
-    "jsxImportSource": "@emotion/react",
+    "jsxImportSource": "@emotion/react"
   },
   "include": ["src", "tsconfig.paths.json"]
 }

@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useCallback, useState } from 'react'
 import Select from '@shared/Select'
-import { 연소득옵션, 신용점수옵션, 결제일옵션 } from '@constants/apply'
+import { earningsList, creditScoreList, paymentList } from '@constants/apply'
 import { ApplyValues } from '@/models/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'
 
@@ -34,24 +34,24 @@ const BasicInfo = ({
       <Select
         name="salary"
         label="연소득"
-        options={연소득옵션}
-        placeholder={연소득옵션[0].label}
+        options={earningsList}
+        placeholder={earningsList[0].label}
         value={infoValues.salary}
         onChange={handleInfoChange}
       />
       <Select
         name="creditScore"
         label="신용점수"
-        options={신용점수옵션}
-        placeholder={신용점수옵션[0].label}
+        options={creditScoreList}
+        placeholder={creditScoreList[0].label}
         value={infoValues.creditScore}
         onChange={handleInfoChange}
       />
       <Select
         name="payDate"
         label="결제일"
-        options={결제일옵션}
-        placeholder={결제일옵션[0].label}
+        options={paymentList}
+        placeholder={paymentList[0].label}
         value={infoValues.payDate}
         onChange={handleInfoChange}
       />

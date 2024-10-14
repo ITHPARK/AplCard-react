@@ -1,6 +1,6 @@
 import { Term, Option } from '@models/apply'
 
-export const 약관목록 = [
+export const termsList = [
   {
     id: '01',
     title: '카드신청 관련 안내 및 필수 동의',
@@ -12,18 +12,18 @@ export const 약관목록 = [
   },
 ] as Term[]
 
-export const 연소득옵션 = [
+export const earningsList = [
   { label: '600만원 ~ 5,000만원', value: '600만원 ~ 5,000만원' },
   { label: '5,000만원 ~ 1억원', value: '5,000만원 ~ 1억원' },
   { label: '1억원 초과', value: '1억원 초과' },
 ] as Option[]
 
-export const 신용점수옵션 = [
+export const creditScoreList = [
   { label: '600점 이상', value: '600점 이상' },
   { label: '600점 미만', value: '600점 미만' },
 ] as Option[]
 
-export const 결제일옵션 = [
+export const paymentList = [
   { label: '1일', value: '1일' },
   { label: '25일', value: '25일' },
 ] as Option[]

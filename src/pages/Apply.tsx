@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Apply from '@components/apply'
 import useApplyCardMutation from '@/components/apply/hooks/useApplyCardMutation'
 import usePollApplyStatus from '@components/apply/hooks/usePollApplyStatus'
@@ -31,12 +31,14 @@ const ApplyPage = () => {
     cardId: id,
     options: {
       onSuccess: (applied) => {
-        //신청에 대한 정보를 받는다.
+        //applied는 useQuery로 가져온 데이터
+
+        //가져온 데이터가 없다면 그냥 리턴
         if (applied == null) {
           return
         }
 
-        //이미 발급된 이력이 있다면
+        //데이터의 status에 완료상태로 되어있으면 alert 노출
         if (applied.status === APPLY_STATUS.COMPLETE) {
           open({
             title: '이미 발급이 완료된 카드입니다.',
@@ -53,7 +55,7 @@ const ApplyPage = () => {
         setReadyToPoll(true)
       },
       onError: () => {},
-      suspense: true, //suspense로 ApplyPage를 감싸고 fallback으로 데이터를 불러올 때 까지 fallback에 들어간 컴포넌트를 보여준다. 여기서 suspense가 true로 되어 있으면 이는 data가 이미 있는 상태를 말한다.
+      suspense: true, //suspense로 ApplyPage를 감싸고 fallback으로 데이터를 불러올 때 까지 fallback에 들어간 컴포넌트를 보여준다. 데이터가 이미 로드된 상태라면 data를 사용할 수 있다.
     },
   })
 

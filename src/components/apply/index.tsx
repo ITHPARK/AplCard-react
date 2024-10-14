@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import BasicInfo from '@/components/apply/BasicInfo'
 import CardInfo from '@/components/apply/CardInfo'
 import Terms from '@/components/apply/Terms'
@@ -52,6 +52,8 @@ const Apply = ({
       //신청이 완료단계가 아닐 때 신청정보 applyValues를 로컬 스토리지에 저장한다.
       localStorage.setItem(storageKey, JSON.stringify(applyValues))
     }
+
+    console.log(applyValues)
   }, [applyValues, onSubmit, storageKey])
 
   const handleTermsChange = (terms: ApplyValues['terms']) => {
@@ -84,7 +86,7 @@ const Apply = ({
 
   return (
     <div>
-      <ProgressBar progress={(applyValues.step as number) / LAST_STEP} />
+      {/* <ProgressBar progress={(applyValues.step as number) / LAST_STEP} /> */}
       {applyValues.step === 0 ? <Terms onNext={handleTermsChange} /> : null}
       {applyValues.step === 1 ? (
         <BasicInfo onNext={handleBasicInfoChange} />

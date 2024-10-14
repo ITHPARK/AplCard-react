@@ -1,6 +1,6 @@
 import React, { useCallback, useState, MouseEvent } from 'react'
 import Agreement from '@shared/Agreement'
-import { 약관목록 } from '@constants/apply'
+import { termsList } from '@constants/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'
 import { ApplyValues } from '@/models/apply'
 
@@ -10,7 +10,7 @@ const Terms = ({
   onNext: (terms: ApplyValues['terms']) => void
 }) => {
   const [termsAgreements, setTermsAgreements] = useState(() => {
-    return 약관목록.reduce<Record<string, boolean>>(
+    return termsList.reduce<Record<string, boolean>>(
       //약관 목록 체크가 되었는지 값을 추가
       (prev, term) => ({
         ...prev,
@@ -46,6 +46,7 @@ const Terms = ({
   const allAgreementChecked = Object.values(termsAgreements).every(
     (agree) => agree,
   ) //termsAgreements 객체를 순회해서 values에만 접근한다.
+
   return (
     <div>
       <Agreement>
@@ -57,7 +58,7 @@ const Terms = ({
         </Agreement.Title>
 
         {/*개별약관 리스트업 */}
-        {약관목록.map(({ id, title, link }) => (
+        {termsList.map(({ id, title, link }) => (
           <Agreement.Description
             key={id}
             link={link}
