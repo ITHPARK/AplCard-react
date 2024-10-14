@@ -3,13 +3,16 @@ import { css } from '@emotion/react'
 import Flex from './Flex'
 import Text from './Text'
 import { colors } from '@/styles/colorPalette'
+import ApplyContainer from './ApplyContainer'
 
 //약관동의 컨테이너
 const Agreement = ({ children }: { children: React.ReactNode }) => {
   return (
-    <Flex as="ul" direction="column" css={agreementContainerStyles}>
-      {children}
-    </Flex>
+    <ApplyContainer>
+      <Flex as="ul" direction="column" css={agreementContainerStyles}>
+        {children}
+      </Flex>
+    </ApplyContainer>
   )
 }
 
@@ -45,13 +48,18 @@ const AgreementDescription = ({
   link?: string
 }) => {
   return (
-    <Flex as="li">
+    <Flex as="li" align="center" css={{ marginBottom: '6px' }}>
       <Flex onClick={(e) => onChange(e, !checked)}>
         <IconCheck checked={checked} />
         <Text typography="t6">{children}</Text>
       </Flex>
       {link != null ? (
-        <a href={link} target="_blank" rel="noreferrer">
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer"
+          css={{ marginLeft: '6px', fontSize: '12px', color: `${colors.blue}` }}
+        >
           링크
         </a>
       ) : null}
@@ -92,8 +100,6 @@ const IconCheck = ({
 }
 
 const agreementContainerStyles = css`
-  padding: 24px;
-
   & li {
     cursor: pointer;
   }

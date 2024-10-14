@@ -3,6 +3,7 @@ import Select from '@shared/Select'
 import { earningsList, creditScoreList, paymentList } from '@constants/apply'
 import { ApplyValues } from '@/models/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'
+import ApplyContainer from '@shared/ApplyContainer'
 
 type InfoValues = Pick<ApplyValues, 'salary' | 'creditScore' | 'payDate'> //ApplyValues 타입에서  'salary' | 'creditScore' | 'payDate'값을 뽑아 쓰는 타입
 
@@ -30,7 +31,7 @@ const BasicInfo = ({
   const allSelected = Object.values(infoValues).every((value) => value)
 
   return (
-    <div>
+    <ApplyContainer>
       <Select
         name="salary"
         label="연소득"
@@ -62,7 +63,7 @@ const BasicInfo = ({
           onNext(infoValues) //이 컴포넌트에서 생성한 infoValues state의 데이터가 onNext 함수로 부모에게 데이터가 전달된다.
         }}
       />
-    </div>
+    </ApplyContainer>
   )
 }
 

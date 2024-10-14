@@ -45,7 +45,16 @@ const Navbar = () => {
 
   return (
     <Flex justify="space-between" align="center" css={NavbarContainerStyles}>
-      <Link to="/">홈</Link>
+      <Link to="/">
+        <img
+          src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Home-01-64.png"
+          alt=""
+          style={{
+            width: 26,
+            height: 26,
+          }}
+        />
+      </Link>
       {renderButton()}
     </Flex>
   )

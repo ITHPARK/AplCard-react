@@ -3,6 +3,7 @@ import Button from '@shared/Button'
 import Spacing from '@shared/Spacing'
 import { ApplyValues } from '@/models/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'
+import ApplyContainer from '@shared/ApplyContainer'
 
 type CardInfoValue = Pick<ApplyValues, 'isHipass' | 'isMaster' | 'isRf'> //ApplyValues 타입에서 'isHipass' | 'isMaster' | 'isRf' 만 가져온다.
 
@@ -31,7 +32,7 @@ const CardInfo = ({
   }, [])
 
   return (
-    <div>
+    <ApplyContainer>
       <Button.Group title="해외결제">
         <Button
           name="isMaster"
@@ -101,7 +102,7 @@ const CardInfo = ({
           onNext(cardInfoValues)
         }}
       />
-    </div>
+    </ApplyContainer>
   )
 }
 

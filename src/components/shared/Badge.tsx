@@ -18,6 +18,7 @@ const Badge = ({ label }: BadgeProps) => {
 }
 
 const Container = styled.div`
+  margin-right: 5px;
   padding: 3px 8px;
   background-color: ${colors.blue};
   border-radius: 12px;

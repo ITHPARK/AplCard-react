@@ -13,6 +13,12 @@ const MyPage = () => {
 
   const handleLogOut = useCallback(() => {
     signOut(auth)
+      .then(() => {
+        alert('로그아웃 되었습니다.')
+      })
+      .catch(() => {
+        console.log('로그아웃 실패')
+      })
   }, [])
 
   return (

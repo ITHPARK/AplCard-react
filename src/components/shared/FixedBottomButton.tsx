@@ -46,8 +46,8 @@ const slideup = keyframes`
 `
 
 const Container = styled.div`
-  padding: 20px 10px 8px;
-  position: fixed;
+  padding: 20px 18px 8px;
+  position: absolute;
   left: 0;
   right: 0;
   bottom: 0;

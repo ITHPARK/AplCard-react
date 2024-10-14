@@ -51,7 +51,8 @@ const CardList = () => {
         hasMore={hasNextPage}
         loader={<ListRow.Skeleton />}
         next={loadMore}
-        scrollThreshold="100px"
+        scrollThreshold="50px"
+        scrollableTarget="App-Wrap"
       >
         <ul>
           {cards?.map((card, index) => {

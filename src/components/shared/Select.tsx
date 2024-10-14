@@ -18,8 +18,13 @@ const BaseSelect = styled.select`
   height: 52px;
   background-color: ${colors.grey};
   border: none;
-  border-radius: 16px;
+  border-radius: 10px;
   cursor: pointer;
+  -webkit-appearance: none; /* for chrome */
+  -moz-appearance: none; /*for firefox*/
+  appearance: none;
+
+  outline: none;
 
   &:required:invalid {
     color: #c0c4c7;
@@ -31,13 +36,14 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
 ) {
   //forwardRef 자식 컴포넌트에 DOM ref를 전달하기 위해서 사용
   return (
-    <Flex direction="column">
+    <Flex direction="column" css={{ marginBottom: '18px' }}>
       {label ? (
         <Text
           typography="t7"
           color="black"
           display="inline-block"
           style={{ marginBottom: 6 }}
+          bold={true}
         >
           {label}
         </Text>

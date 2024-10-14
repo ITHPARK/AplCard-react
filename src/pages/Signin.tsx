@@ -19,6 +19,8 @@ const SigninPage = () => {
         //입력된 이메일, 패스워드 검사
         await signInWithEmailAndPassword(auth, email, password)
 
+        alert('로그인 성공')
+
         navigate('/')
       } catch (e) {
         // firebase 의 에러

@@ -3,6 +3,7 @@ import Agreement from '@shared/Agreement'
 import { termsList } from '@constants/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'
 import { ApplyValues } from '@/models/apply'
+import Spacing from '@shared/Spacing'
 
 const Terms = ({
   onNext,
@@ -56,6 +57,8 @@ const Terms = ({
         >
           약관에 모두 동의
         </Agreement.Title>
+
+        <Spacing size={18} />
 
         {/*개별약관 리스트업 */}
         {termsList.map(({ id, title, link }) => (

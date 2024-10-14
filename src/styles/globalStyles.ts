@@ -1,5 +1,5 @@
 import { css } from '@emotion/react'
-import { colorPalette } from './colorPalette'
+import { colorPalette, colors } from './colorPalette'
 
 export default css`
   ${colorPalette} // 색상을 추가
@@ -162,24 +162,46 @@ export default css`
     text-decoration: none;
   }
 
-  // html {
-  //   min-height: 100%;
-  // }
-
-  // #root {
-  //   height: 100%;
-  // }
-
-  // body {
-  //   height: 100%;
-  //   background-color: rgb(239, 239, 239);
-  // }
-
-  .App-Wrap {
-    margin: 0 auto;
-    width: 100%;
+  html {
     height: 100%;
-    max-width: 1000px;
+  }
+
+  body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: ${colors.black};
+  }
+
+  #App-Wrap {
+    margin: 0 auto;
+    width: 100vw;
+    height: 750px;
+    max-width: 500px;
+    position: relative;
     background-color: #fff;
+    overflow-y: auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  #App-Wrap::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  #App-Wrap::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    border-radius: 10px;
+  }
+
+  #App-Wrap::-webkit-scrollbar-track {
+    background-color: lightgrey;
+  }
+
+  #root-portal {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 `
