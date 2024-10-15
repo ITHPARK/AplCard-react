@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import { useCallback } from 'react'
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import useUser from '@hooks/auth/useUser'

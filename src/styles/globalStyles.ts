@@ -200,8 +200,7 @@ export default css`
 
   #root-portal {
     width: 100%;
-    position: absolute;
+    position: sticky;
     bottom: 0;
-    left: 0;
   }
 `

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, MouseEvent } from 'react'
+import { useCallback, useState, MouseEvent } from 'react'
 import Agreement from '@shared/Agreement'
 import { termsList } from '@constants/apply'
 import FixedBottomButton from '@shared/FixedBottomButton'

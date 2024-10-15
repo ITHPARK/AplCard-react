@@ -1,4 +1,3 @@
-import React from 'react'
 import Form from '@/components/signup/Form'
 import { FormValuesProps } from '@/models/signup'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'

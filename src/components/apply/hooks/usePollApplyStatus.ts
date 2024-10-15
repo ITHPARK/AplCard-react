@@ -18,7 +18,6 @@ const usePollApplyStatus = ({
     refetchInterval: 2_000, //2초마다 다시 데이터 호출
     staleTime: 0, //캐싱하지 않음
     onSuccess: (status) => {
-      console.log('status', status)
       if (status === APPLY_STATUS.COMPLETE) {
         //COMPLETE일 때 onSuccess 실행
         onSuccess()

@@ -2,7 +2,6 @@ import { Suspense } from 'react'
 import Top from '@shared/Top'
 import AdBanner from '@components/home/AdBanner'
 import CardList from '@components/home/CardList'
-import Button from '@/components/shared/Button'
 import ListRow from '@shared/ListRow'
 
 const Home = () => {

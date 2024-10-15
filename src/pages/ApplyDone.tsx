@@ -1,5 +1,4 @@
 import { parse } from 'qs'
-
 import Flex from '@shared/Flex'
 import Text from '@shared/Text'
 import FixedBottomButton from '@shared/FixedBottomButton'
@@ -9,8 +8,6 @@ const ApplyDone = () => {
   const { success } = parse(window.location.search, {
     ignoreQueryPrefix: true,
   }) as { success: string }
-
-  console.log(success)
 
   return (
     <Flex

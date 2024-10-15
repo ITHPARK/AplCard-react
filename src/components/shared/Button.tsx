@@ -3,7 +3,6 @@ import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 import {
   ButtonColor,
-  ButtonTranparent,
   ButtonSize,
   buttonColorMap,
   buttonTransparentMap,

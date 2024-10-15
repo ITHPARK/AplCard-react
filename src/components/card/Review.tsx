@@ -1,4 +1,3 @@
-import React from 'react'
 import { useQuery } from 'react-query'
 import Skeleton from '@shared/Skeleton'
 import Spacing from '@shared/Spacing'

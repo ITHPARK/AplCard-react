@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useCallback, useState } from 'react'
+import { ChangeEvent, useCallback, useState } from 'react'
 import Select from '@shared/Select'
 import { earningsList, creditScoreList, paymentList } from '@constants/apply'
 import { ApplyValues } from '@/models/apply'

@@ -1,4 +1,4 @@
-import React, { Suspense, useCallback } from 'react'
+import { useCallback } from 'react'
 import ListRow from '@shared/ListRow'
 import { useInfiniteQuery } from 'react-query'
 import { getCards } from '@/remote/cards'
