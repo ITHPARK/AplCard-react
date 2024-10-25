@@ -1,5 +1,6 @@
-import { css } from '@emotion/react'
 import { colorPalette, colors } from './colorPalette'
+
+import { css } from '@emotion/react'
 
 export default css`
   ${colorPalette} // 색상을 추가
@@ -200,7 +201,7 @@ export default css`
 
   #root-portal {
     width: 100%;
-    position: sticky;
+    position: absolute;
     bottom: 0;
   }
 `
