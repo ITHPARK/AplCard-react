@@ -46,7 +46,6 @@ const Navbar = () => {
 
   return (
     <Flex justify="space-between" align="center" css={NavbarContainerStyles}>
-<<<<<<< HEAD
       <Link
         to="/"
         css={css`
@@ -58,18 +57,6 @@ const Navbar = () => {
         `}
       >
         APLcard
-=======
-      <Link to="/">
-        {/* <img
-          src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Home-01-64.png"
-          alt=""
-          style={{
-            width: 26,
-            height: 26,
-          }}
-        /> */}
-        <h1 css={MainLogo}>CARD</h1>
->>>>>>> 75e041836bfaa4e6570c0b9ed380c5f144ac19ee
       </Link>
       {renderButton()}
     </Flex>
