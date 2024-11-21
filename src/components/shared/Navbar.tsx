@@ -1,13 +1,14 @@
-import Flex from '@shared/Flex'
 import { Link, useLocation } from 'react-router-dom'
+
 import Button from '@shared/Button'
-import { css } from '@emotion/react'
-import { colors } from '@styles/colorPalette'
-import useUser from '@hooks/auth/useUser'
-import { useCallback } from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '@remote/firebase'
+import Flex from '@shared/Flex'
 import MyImage from '@components/my/MyImage'
+import { auth } from '@remote/firebase'
+import { colors } from '@styles/colorPalette'
+import { css } from '@emotion/react'
+import { signOut } from 'firebase/auth'
+import { useCallback } from 'react'
+import useUser from '@hooks/auth/useUser'
 
 const Navbar = () => {
   const location = useLocation()
@@ -45,6 +46,7 @@ const Navbar = () => {
 
   return (
     <Flex justify="space-between" align="center" css={NavbarContainerStyles}>
+<<<<<<< HEAD
       <Link
         to="/"
         css={css`
@@ -56,6 +58,18 @@ const Navbar = () => {
         `}
       >
         APLcard
+=======
+      <Link to="/">
+        {/* <img
+          src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Home-01-64.png"
+          alt=""
+          style={{
+            width: 26,
+            height: 26,
+          }}
+        /> */}
+        <h1 css={MainLogo}>CARD</h1>
+>>>>>>> 75e041836bfaa4e6570c0b9ed380c5f144ac19ee
       </Link>
       {renderButton()}
     </Flex>
@@ -70,6 +84,12 @@ const NavbarContainerStyles = css`
   background-color: ${colors.white};
   z-index: 9;
   border-bottom: 1px solid ${colors.grey};
+`
+
+const MainLogo = css`
+  font-size: 20px;
+  font-weight: bold;
+  color: ${colors.blue};
 `
 
 export default Navbar
