@@ -198,6 +198,10 @@ export default css`
     background-color: lightgrey;
   }
 
+  #root {
+    min-height: 100%;
+  }
+
   #root-portal {
     width: 100%;
     position: sticky;

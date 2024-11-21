@@ -45,15 +45,17 @@ const Navbar = () => {
 
   return (
     <Flex justify="space-between" align="center" css={NavbarContainerStyles}>
-      <Link to="/">
-        <img
-          src="https://cdn0.iconfinder.com/data/icons/set-app-incredibles/24/Home-01-64.png"
-          alt=""
-          style={{
-            width: 26,
-            height: 26,
-          }}
-        />
+      <Link
+        to="/"
+        css={css`
+          font-size: 18px;
+          font-weight: 700;
+          font-style: italic;
+          color: #1a237e;
+          letter-spacing: -0.03em;
+        `}
+      >
+        APLcard
       </Link>
       {renderButton()}
     </Flex>
