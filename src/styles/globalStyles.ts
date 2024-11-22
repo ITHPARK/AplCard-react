@@ -181,13 +181,15 @@ export default css`
     height: 750px;
     max-width: 500px;
     position: relative;
-    background-color: #fff;
     overflow-y: auto;
+    background-color: #fff;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
   #App-Wrap::-webkit-scrollbar {
     width: 10px;
+    position: relative;
+    z-index: 100;
   }
 
   #App-Wrap::-webkit-scrollbar-thumb {
@@ -200,12 +202,13 @@ export default css`
   }
 
   #root {
-    min-height: 100%;
+    height: 100%;
   }
 
   #root-portal {
     width: 100%;
-    position: absolute;
+    position: sticky;
+    left: 0;
     bottom: 0;
   }
 `

@@ -73,10 +73,4 @@ const NavbarContainerStyles = css`
   border-bottom: 1px solid ${colors.grey};
 `
 
-const MainLogo = css`
-  font-size: 20px;
-  font-weight: bold;
-  color: ${colors.blue};
-`
-
 export default Navbar

@@ -51,7 +51,7 @@ const Container = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: ${colors.white};
+  background-color: #fff;
   transform: translateY(100%);
   animation: ${slideup} 0.5s ease-in-out forwards;
 `

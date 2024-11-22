@@ -85,6 +85,7 @@ const ApplyPage = () => {
     enabled: readyToPoll,
   })
 
+  //마직막 단계에서 다음을 눌렀을 때 넘어가는 신청단계
   const { mutate, isLoading: isApplying } = useApplyCardMutation({
     onSuccess: () => {
       //신청이 성공했을 때
