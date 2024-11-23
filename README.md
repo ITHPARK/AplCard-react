@@ -311,10 +311,37 @@ input upload에 등록된 이미지를 storage에 업로드하고 firebase store
    
    카드 신청페이지는 총 3페이지로 구성되어 있으며, 각 정보를 입력 시 applyValues state에 정보가 저장되게 됩니다. 
    저장된 정보는 유저 정보와 함께 firebase store에 추가됩니다.   
- 
 
-    정보를 모두 입력하고 신청하게되면 store의 CARD_APPLY 컬렉션에 접근하여 데이터를 인자로 전달받은 유저의 정보와 applyValues가 신청 데이터로 추가됩니다.
+   ```js
+   export const applyCard = async (applyValues: ApplyValues) => {
+  return addDoc(collection(store, COLLECTIONS.CARD_APPLY), applyValues) //addDOC함수로 store에 접근하여 데이터를 생성
+}
 
+export const updateApplyCard = async ({
+  cardId,
+  userId,
+  applyValues,
+}: {
+  cardId: string
+  userId: string
+  applyValues: Partial<ApplyValues> // Partial = ApplyValues 일부만 업데이트 가능하게 설정 신청 정보의 일부만 업데이트할 수 있다.
+}) => {
+  const snapshot = await getDocs(
+    query(
+      collection(store, COLLECTIONS.CARD_APPLY), //CARD_APPLY 컬렉션을 참조
+      where('userId', '==', userId), //where문으로 userId와 cardId에 해당하는 문서를 필터링
+      where('cardId', '==', cardId),
+    ),
+  )
+
+  const [applied] = snapshot.docs //참조한 컬렉션에서 조건에 맞는 데이터들을 담은 배열
+  updateDoc(applied.ref, applyValues) //원래 문서 applied.ref를 applyValues로 업데이트
+}
+   ```
+
+
+   정보를 모두 입력하고 신청하게되면 store의 CARD_APPLY 컬렉션에 접근하여 데이터를 인자로 전달받은 유저의 정보와 applyValues가 신청 데이터로 추가됩니다
+   
 <br>
 
 ![구현4](https://github.com/user-attachments/assets/f5656b63-f8a4-4bce-8f1e-684aaf6265a8)
