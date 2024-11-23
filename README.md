@@ -282,7 +282,7 @@ export default Form
   
    <br>	
 
-각 from에 입력된 정보를 formValues state에 업데이트합니다. state 데이터를 통해서 firebase에서 제공하는 로그인 함수인 signInWithEmailAndPassword에 이메일과 패스워드를 전닳하여 로그인을 시도합니다.
+input upload에 등록된 이미지를 storage에 업로드하고 firebase store에 유저정보에 경로를 추가합니다.
 
 <br>	
 
