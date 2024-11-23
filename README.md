@@ -262,7 +262,8 @@ export default Form
 
 <br>	
 
-![구현1](https://github.com/user-attachments/assets/c1eb25f7-aeaa-4eaa-96fa-014861470cf6)
+![구현2](https://github.com/user-attachments/assets/67801efa-fb3d-40fd-aebc-d0df6c45adfb)
+
 
 구현된 화면.
 
