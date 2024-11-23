@@ -31,7 +31,7 @@ React + Typescript 카드 신청 앱
 	
    한번 호출당 10개의 데이터를 가져오며 스크롤이 일정 부분 내려갔을 때 다음 10개를 호출합니다.
 	
-   <br>	
+   <br>
   
    ![이미지1](https://github.com/user-attachments/assets/d7baa1fe-7930-4a1b-8661-1cc7d9f883be)
 
@@ -292,7 +292,41 @@ input upload에 등록된 이미지를 storage에 업로드하고 firebase store
 구현된 화면.
    
 </details>
+
+
+ <details>
+	<summary>카드 신청 기능</summary>
+   <br>
+	
+로그인을 한 유저는 원하는 카드를 신청할 수 있는 기능을 구현하였습니다.
+	
+   <br>	
+   
+   ![이미지9](https://github.com/user-attachments/assets/db7be684-d6e8-4daf-b795-c0cc77fd01f5)
+
+
+   카드 상세 페이지에서 하단 버튼을 클릭 시 카드 신청 페이지로 이동하게 됩니다.
+   
+   <br>	
+   
+   카드 신청페이지는 총 3페이지로 구성되어 있으며, 각 정보를 입력 시 applyValues state에 정보가 저장되게 됩니다. 
+   저장된 정보는 유저 정보와 함께 firebase store에 추가됩니다.   
  
+
+    정보를 모두 입력하고 신청하게되면 store의 CARD_APPLY 컬렉션에 접근하여 데이터를 인자로 전달받은 유저의 정보와 applyValues가 신청 데이터로 추가됩니다.
+
+<br>
+
+![구현4](https://github.com/user-attachments/assets/f5656b63-f8a4-4bce-8f1e-684aaf6265a8)
+
+<br>
+
+![이미지10](https://github.com/user-attachments/assets/8a506200-a007-488a-bbd2-f5531b11eef1)
+
+신청 정보가 store에 추가됩니다.
+
+
+</details>
   
 
 
