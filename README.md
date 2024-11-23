@@ -264,11 +264,32 @@ export default Form
 
 ![구현2](https://github.com/user-attachments/assets/67801efa-fb3d-40fd-aebc-d0df6c45adfb)
 
-
 구현된 화면.
 
+</details>
 
+<details>
+	<summary>마이페이지 프로필 수정 기능</summary>
+   <br>
+	
+  마이페이지에서 유저의 프로필 사진 변경 기능을 구현하였습니다. 변경된 이미지는 firebase storage에 저장됩니다.
+	
+   <br>	
    
+   ![image](https://github.com/user-attachments/assets/d678a762-b128-44ee-a421-f803928278e7)
+
+  프로필 이미지를 클릭하면 프로필 사진을 변경할 수 있습니다.
+  
+   <br>	
+
+각 from에 입력된 정보를 formValues state에 업데이트합니다. state 데이터를 통해서 firebase에서 제공하는 로그인 함수인 signInWithEmailAndPassword에 이메일과 패스워드를 전닳하여 로그인을 시도합니다.
+
+<br>	
+
+![구현3](https://github.com/user-attachments/assets/cfd78ad9-9b5c-479d-aceb-c4bff606d2e8)
+
+
+구현된 화면.
    
 </details>
  
