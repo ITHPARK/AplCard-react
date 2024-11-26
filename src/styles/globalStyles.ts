@@ -210,5 +210,6 @@ export default css`
     position: sticky;
     left: 0;
     bottom: 0;
+    z-index: 10;
   }
 `
